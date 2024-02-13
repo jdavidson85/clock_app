@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import Foundation
+ 
+class Clock {
+    private var timer: Timer?
+    private var dateFormatter: DateFormatter
+ 
+    var currentTime: String {
+        return dateFormatter.string(from: Date())
+    }
+ 
+    init() {
+        dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm:ss"
+    }
+ 
+    func start() {
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+            print(self?.currentTime ?? "")
+        }
+        timer?.fire()
+    }
+ 
+    func stop() {
+        timer?.invalidate()
+        timer = nil
+    }
+}
+ 
+// Example of using the Clock class:
+ 
+let clock = Clock()
+clock.start()
+ 
+// Wait for 10 seconds
+RunLoop.current.run(until: Date(timeIntervalSinceNow: 10))
+ 
+clock.stop()
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 748}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>
