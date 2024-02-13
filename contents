@@ -1,0 +1,35 @@
+class Clock {
+    private var timer: Timer?
+    private var dateFormatter: DateFormatter
+ 
+    var currentTime: String {
+        return dateFormatter.string(from: Date())
+    }
+ 
+    init() {
+        dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm:ss"
+    }
+ 
+    func start() {
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+            print(self?.currentTime ?? "")
+        }
+        timer?.fire()
+    }
+ 
+    func stop() {
+        timer?.invalidate()
+        timer = nil
+    }
+}
+ 
+// Example of using the Clock class:
+ 
+let clock = Clock()
+clock.start()
+ 
+// Wait for 10 seconds
+RunLoop.current.run(until: Date(timeIntervalSinceNow: 10))
+ 
+clock.stop()
