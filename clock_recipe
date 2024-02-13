@@ -27,4 +27,4 @@ clock.stop()
 
 Output:
 
-/*The playground should show a ticking clock.*/
+/*The playground should show the time being listed and ticking.*/
