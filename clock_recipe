@@ -1,0 +1,28 @@
+/*Psuedocode Clock App*/
+
+Variables:
+
+Clock
+timer
+date formatter
+current time
+
+Process:
+
+func start() {
+        timer = Timer
+        }
+        timer?.fire()
+    }
+ 
+    func stop() {
+        timer?.invalidate()
+        timer = nil
+    }
+let clock = Clock()
+clock.start()
+clock.stop()
+
+Output:
+
+/*The playground should show a ticking clock with starts and stops.*/
