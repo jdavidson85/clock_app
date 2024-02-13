@@ -6,6 +6,9 @@ Clock
 timer
 date formatter
 current time
+hours
+minutes
+seconds
 
 Process:
 
